@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer List</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://tse3.mm.bing.net/th?id=OIP.1lulvFb35D1Gp9KPG1NXVAHaEK&pid=Api&P=0&h=180');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-color: rgba(76, 175, 80, 0.9);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* Flexbox grid */
+        .item-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .item-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .item-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .item-card h2 {
+            font-size: 20px;
+            margin: 15px 0;
+        }
+
+        .item-card p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .item-card button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .item-card button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Fertilizers</h1>
+</header>
+
+<div class="container">
+    <div class="item-list">
+        <!-- Example Item Card for Urea -->
+        <div class="item-card">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.6Ajc6VpnUfz-2A8xl7EdFAHaHa&pid=Api&P=0&h=230" alt="Urea">
+            <h2>Urea</h2>
+            <p>Price: Rs. 1,000</p>
+            <form method="POST" action="{% url 'cart_add' name='Urea' %}">
+                {% csrf_token %}
+                <label for="qty">Quantity:</label>
+                <input type="number" name="qty" value="1" min="1" max="100">
+                <br><br>
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
+
+        <!-- Example Item Card for Potash -->
+        <div class="item-card">
+            <img src="https://kj1bcdn.b-cdn.net/media/31468/potash.jpg?width=180" alt="Potash">
+            <h2>Potash</h2>
+            <p>Price: Rs. 1,200</p>
+            <form method="POST" action="{% url 'cart_add' name='Potash' %}">
+                {% csrf_token %}
+                <label for="qty">Quantity:</label>
+                <input type="number" name="qty" value="1" min="1" max="100">
+                <br><br>
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
+
+        <!-- Example Item Card for Atrazine -->
+        <div class="item-card">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.e1tTx722PzVXF-EG-V7WJAHaFR&pid=Api&P=0&h=230" alt="Atrazine">
+            <h2>Atrazine</h2>
+            <p>Price: Rs. 900</p>
+            <form method="POST" action="{% url 'cart_add' name='Atrazine' %}">
+                {% csrf_token %}
+                <label for="qty">Quantity:</label>
+                <input type="number" name="qty" value="1" min="1" max="100">
+                <br><br>
+                <button type="submit">Add to Cart</button>
+            </form>
+        </div>
+        <!-- Add more items as needed -->
+    </div>
+</div>
+
+</body>
+</html>

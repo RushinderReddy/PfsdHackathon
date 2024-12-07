@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin:60px;
+  width:70%;
+  height:50%;
+}
+
+.about-section {
+
+  padding: 40px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+text-align: center;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+img {
+  border-radius: 50%;
+  width:20%;
+}
+</style>
+</head>
+<body>
+<br>
+
+<div class="about-section">
+<img alt="" src="https://images.pexels.com/photos/5231239/pexels-photo-5231239.jpeg?cs=srgb&dl=pexels-anna-shvets-5231239.jpg&fm=jpg" align="right">
+  <h1>About Us</h1>
+  <p style = "font-family:georgia,garamond,serif;font-size:20px;font-style:italic;text-align:center">
+Our team assures you that all the farmers will get benefited from this website. We know the problems of farmers regarding fertilizers. We feel your problems and we have a Technical solution.
+We are passionate about the land and we will make you experience the new technology. Finally, you will say Farming is the easiest work. After your experience please share our work details with the remaining farmers so that they also will get escaped from the effects of fertilizing lands.
+</p>
+
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="https://media-exp1.licdn.com/dms/image/C5603AQHsxs8QsD9wjA/profile-displayphoto-shrink_400_400/0/1647352929686?e=1652918400&v=beta&t=CCy3kguVmM6kH6ifnIbtDaStYwFkHE-JcfZiDArq_k4" alt="" style="width:100%">
+      <div class="container">
+        <h2>Kalyan</h2>
+        <p>kalyan27@gmail.com</p>
+        <p><button class="button" onclick="document.location='/contact'">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://media-exp1.licdn.com/dms/image/D5635AQHZxUz-Eklp2w/profile-framedphoto-shrink_400_400/0/1647450134447?e=1647745200&v=beta&t=4P00zHF009MI1-uOE2Gnw-hFy9sL2GX16d7SSl_Ivmo" alt="" style="width:100%">
+      <div class="container">
+        <h2>Dileep</h2>
+        <p>dileep25@gmail.com</p>
+        <p><button class="button" onclick="document.location='/contact'">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://media-exp1.licdn.com/dms/image/C4E03AQG2i8yHs1ZiVQ/profile-displayphoto-shrink_400_400/0/1632759882220?e=1652918400&v=beta&t=ginU7TrhWONlgqftQzGOnpBPozusj1pkNWwhERNIpYk" alt="" style="width:100%">
+      <div class="container">
+        <h2>Rushinder</h2>
+        <p>leep19@gmail.com</p>
+        <p><button class="button" onclick="document.location='/contact'">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

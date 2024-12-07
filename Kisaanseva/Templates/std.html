@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer Spraying Drones</title>
+    <style>
+        /* Add basic styling */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color:red;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .item-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        .item-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .item-card img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .item-card h2 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .item-card p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .item-card button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .item-card button:hover {
+            background-color: #45a049;
+        }
+        .cart-summary {
+            margin: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .cart-summary h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+    <h1>Soil testing Drones</h1>
+</header>
+
+<!-- Display Item List -->
+<div class="item-list">
+    <!-- Example Item Card for DJI Agras T40 -->
+    <div class="item-card">
+        <img src="https://assets2.cbsnewsstatic.com/hub/i/r/2018/03/31/ab52e1e4-4c51-4383-9b43-9a4fcba3b715/thumbnail/1200x630/be727e735d0f1f1c387150477e1a332b/0331-en-drones-martin-1535176-640x360.jpg  " alt=" Drone">
+        <h2>Soil Testing Drones</h2>
+        <p>Price: Rs. 1,35,000</p>
+        <p>Drone soil analysis refers to the use of drones to monitor soil’s nutrient levels, moisture content, and more. The ideal levels of nutrients, salinity, and moisture will vary depending on the crop in question, but the balance must be tracked closely.</p>
+
+        <form method="POST" action="{% url 'cart_add' name='DJI Agras T40' %}">
+            {% csrf_token %}
+            <label for="qty">Quantity:</label>
+            <input type="number" name="qty" value="1" min="1" max="100">
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+    <!-- Add more drone items here as needed -->
+</div>
+
+<!-- Display Cart Summary (Optional) -->
+{% if cartobj %}
+    <div class="cart-summary">
+        <h2>Your Cart</h2>
+        <ul>
+            {% for cart_item in cartobj %}
+                <li>{{ cart_item.item.name }} - Qty: {{ cart_item.quantity }} - Rs. {{ cart_item.item.price }} each</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% else %}
+    <p></p>
+{% endif %}
+
+</body>
+</html>

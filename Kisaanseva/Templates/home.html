@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kisaan Seva</title>
+    <style>
+h2{
+    color:black;
+    font-family: "Lucida Handwriting", Cursive;
+    font-size: 50px;
+
+  }
+.b{
+color: white;
+font-size: 25px;
+}
+.image{
+      width:auto;
+     height:45em;
+
+background-size:cover;
+     background-repeat: no-repeat;
+    background-image:url('https://images.pexels.com/photos/8332320/pexels-photo-8332320.jpeg?cs=srgb&dl=pexels-mikhail-nilov-8332320.jpg&fm=jpg');
+}
+.column {
+  float:left;
+  width: 33%;
+  padding: 50px 100px;
+  font-size:20px;
+font-weight:400
+line height:27px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 50px;
+  text-align: center;
+  background-color: #ABE026
+  ;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #E1FB9F;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 18px 18px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #f0f1f1;
+}
+.button {
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {
+background-color: #E1FB9F
+}
+footer{
+	background:#000;
+	color:#fff;
+	padding:5px 70px;
+	text-align:center;
+
+	}
+img{
+width:320px;
+height:180px;
+}
+</style>
+</head>
+<body>
+<div class="image" style="text-align:center;">
+<ul>
+  <li> <a href="">KISAAN SEVA</a></li>
+  <li  style="float:right"><a href="/feedback">Feedback</a></li>
+  <li  style="float:right"><a href="/contact">Contact</a></li>
+  <li  style="float:right"><a href="/about">About</a></li>
+
+</ul>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<marquee width="30%" direction="left" height="100px">
+<h2>WELCOME TO KISAAN SEVA</h2>
+</marquee>
+<br><br>
+<p align="center" class="b">Explore New Way Of Agriculture</p>
+
+<div align="center">
+
+<button class="button button1" onclick="window.location.href='/login';">Login/SignUp</button>
+
+</div>
+<br><br><br><br><br><br><br><br><br><br><br>
+    <h1>Extra Services We Provide</h1>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <h3>Fertilizers</h3>
+ <img src="https://images.pexels.com/photos/6913399/pexels-photo-6913399.jpeg?cs=srgb&dl=pexels-teona-swift-6913399.jpg&fm=jpg">
+      <p style="color:white">Customer satisfaction is our primary goal and responsibility. We ensure each purchase you do through our website is at it's best possible price. Discount codes and other coupons are on your way.</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <h3>Organic Farming</h3>
+       <img src="https://images.pexels.com/photos/1675211/pexels-photo-1675211.jpeg?cs=srgb&dl=pexels-artem-beliaikin-1675211.jpg&fm=jpg">
+      <p style="color:white">Our experts are available to answer your queries regarding Organic Farming techniques. Please feel free to contact us.</p>
+    </div>
+  </div>
+</div>
+<footer>
+		<p style=font-size: 15px;>All Right Reserved By Kisaan Seva</p>
+	</footer>
+</body>
+</html>

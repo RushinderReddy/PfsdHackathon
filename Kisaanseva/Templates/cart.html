@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            background-image: url('https://media.istockphoto.com/vectors/midnight-blue-coloured-wall-textured-empty-vector-backgrounds-vector-id1218925113?k=6&m=1218925113&s=612x612&w=0&h=pcOukTdZr2A616PQObvsj-yTY3qVgGZf-W7WN-gyq5s=');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        th, td {
+            border: 2px solid #333;
+            text-align: center;
+            padding: 15px;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        h1.a {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 15px;
+            font-size: 16px;
+            color: black;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #ddd; /* Change color on hover */
+        }
+        header {
+            height: 60px;
+            background-color: #262626;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .logo {
+            color: #fff;
+            font-weight: bold;
+            font-size: 25px;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex; /* Use flexbox for navigation */
+        }
+        nav ul li {
+            margin-left: 20px; /* Space between nav items */
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold; /* Make links bold */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Kisaan Seva</div>
+    <nav>
+        <ul>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h1 class="a">CART DETAILS</h1>
+
+<table>
+    {% if cart_items %}
+    <tr>
+        <th>Sno</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Net Price</th>
+        <th>Delete Item</th>
+    </tr>
+
+    {% for i in cart_items %}
+    <tr>
+        {% csrf_token %}
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.items.name }}</td>
+        <td>Rs. {{ i.items.price }}</td>
+        <td>{{ i.quantity }}</td>
+        <td>Rs. {{ i.total }}</td>
+        <td><a href="{% url 'remove' name=i.items.name %}">Remove</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+
+    <h1 class="a">Total&nbsp;:&nbsp;Rs. {{ total }}</h1>
+
+    <button class="button" onclick="window.location.href='{% url 'amount' total=total cart_items=cart_items %}'">Pay Now</button>
+
+    {% else %}
+    <h1 class="a">Cart Empty !!!</h1>
+    {% endif %}
+
+</body>
+</html>
